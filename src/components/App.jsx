@@ -1,16 +1,16 @@
 // import './App.css';
-import { ColorPicker } from './ColorPicker/ColorPicker';
-import { Dropdown } from './Dropdown/Dropdown';
+import { ColorPicker } from './ColorPicker';
+import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
-// import { RecipeList } from './RecipeList/RecipeList';
-// import recipes from './RecipeList/recipes.json';
+import { RecipeList } from './RecipeList';
+import recipes from './RecipeList/recipes.json';
 import { Wrapper } from './Wrapper/Wrapper';
 // import { DisplayOutput } from './DisplayUotput/DisplayOutput';
 // import { Button } from './Button/Button';
-import { Counter } from './Counter/Counter';
+import { Counter } from './Counter';
 
 // import Section from './components/Section';
-// import users from './data/users.json';
+// import users from './data/users.json';j
 // import UserProfileList from './components/UserProfileList';
 
 // * import data JSON
@@ -29,7 +29,7 @@ export default function App() {
 
       {/* <DisplayOutput /> */}
 
-      {/* <RecipeList items={recipes} /> */}
+      <RecipeList items={recipes} />
 
       {/* <Button /> */}
 
