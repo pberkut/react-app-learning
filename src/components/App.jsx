@@ -1,11 +1,12 @@
 // import './App.css';
+import { Dropdown } from './Dropdown/Dropdown';
 import { GlobalStyles } from './GlobalStyles';
 // import { RecipeList } from './RecipeList/RecipeList';
 // import recipes from './RecipeList/recipes.json';
 import { Wrapper } from './Wrapper/Wrapper';
 // import { DisplayOutput } from './DisplayUotput/DisplayOutput';
 // import { Button } from './Button/Button';
-import { Counter } from './Counter/Counter';
+// import { Counter } from './Counter/Counter';
 
 // import Section from './components/Section';
 // import users from './data/users.json';
@@ -16,7 +17,9 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
-      <Counter initialValue={2} />
+      <Dropdown />
+
+      {/* <Counter initialValue={2} /> */}
 
       {/* <DisplayOutput /> */}
 
