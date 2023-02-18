@@ -1,0 +1,29 @@
+.counter {
+    margin: 50px;
+    outline: 1px solid gray;
+    padding: 20px;
+    text-align: center;
+    background-color: lightgreen;
+}
+
+button {
+    width: 80px;
+    height: 40px;
+}
+
+.counter__value {
+    border: 1px solid gray;
+    margin: 10px;
+    display: block;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: black;
+    color: wheat;
+}
+
+.counter__controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px
+}
