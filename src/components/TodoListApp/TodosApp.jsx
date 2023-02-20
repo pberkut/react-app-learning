@@ -15,17 +15,21 @@ export class TodoListApp extends Component {
 
   render() {
     const { todos } = this.state;
-    const completedTodos = todos.reduce(
+
+    const totalTodoCount = todos.length;
+
+    // Очень полезная штука когда из массива нужно вытащить общее количство чего-т о
+    const completedTodoCount = todos.reduce(
       (acc, todo) => (todo.completed ? acc + 1 : acc),
       0
     );
 
-    console.log(completedTodos);
+    console.log(completedTodoCount);
 
     return (
       <>
-        <p>All Todos amount: {todos.length} </p>
-        <p>Todos done amount: {completedTodos}</p>
+        <p>All Todos amount: {totalTodoCount} </p>
+        <p>Todos done amount: {completedTodoCount}</p>
 
         <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
       </>
