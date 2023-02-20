@@ -1,4 +1,5 @@
 // import './App.css';
+
 import { ColorPicker } from './ColorPicker';
 import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
@@ -8,6 +9,7 @@ import { Wrapper } from './Wrapper/Wrapper';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 import { Counter } from './Counter';
+import { TodoListApp } from './TodoListApp';
 
 // import Section from './components/Section';
 // import users from './data/users.json';j
@@ -15,50 +17,35 @@ import { Counter } from './Counter';
 
 // * import data JSON
 import optionsColorPicker from './ColorPicker/ColorPickerData.json';
-import { Component } from 'react';
-import { TodoList } from './TodoList/TodoList';
 
-export default class App extends Component {
-  state = {
-    todos: [
-      { id: 'id-1', text: 'Todo 1', completed: false },
-      { id: 'id-2', text: 'Todo 2', completed: false },
-      { id: 'id-3', text: 'Todo 3', completed: false },
-      { id: 'id-4', text: 'Todo 4', completed: false },
-    ],
-  };
+export default function App() {
+  return (
+    <Wrapper>
+      <GlobalStyles />
 
-  render() {
-    const { todos } = this.state;
+      <TodoListApp />
 
-    return (
-      <Wrapper>
-        <GlobalStyles />
+      <ColorPicker options={optionsColorPicker} />
 
-        <TodoList todos={todos} />
+      <Dropdown />
 
-        <ColorPicker options={optionsColorPicker} />
+      <Counter initialValue={2} />
 
-        <Dropdown />
+      {/* <DisplayOutput /> */}
 
-        <Counter initialValue={2} />
+      <RecipeList items={recipes} />
 
-        {/* <DisplayOutput /> */}
+      {/* <Button /> */}
 
-        <RecipeList items={recipes} />
+      {/* <UserProfileList items={users} /> */}
 
-        {/* <Button /> */}
-
-        {/* <UserProfileList items={users} /> */}
-
-        {/* <Section title="Section 1">
+      {/* <Section title="Section 1">
         <UserProfileList items={users} />
       </Section>
 
       <Section title="Section 2" />
 
       <Section /> */}
-      </Wrapper>
-    );
-  }
+    </Wrapper>
+  );
 }
