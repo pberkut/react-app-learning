@@ -36,19 +36,22 @@ export class ColorPicker extends Component {
         {/* Вычисляемые данные в state  дожно зранится минимальные данные */}
         <p>Selected color: {activeOption.label}</p>
         <div>
-          {options.map(({ label, color }, index) => (
-            <PickerBtn
-              // !  https://www.youtube.com/watch?v=terXi4NlcoI&t=4861s
-              //   ! index доступен через замыкание. мы передаём inline функцию, которая вызвится во время клика и вызовет нашу функцию (метод класса)
-              onClick={() => this.setActiveIdx(index)}
-              key={label}
-              className={this.makeOptionClassName(index)}
-              style={{
-                backgroundColor: color,
-                border: index === activeOptionIdx ? '3px solid black' : 'none',
-              }}
-            ></PickerBtn>
-          ))}
+          {options.map(({ label, color }, index) => {
+            return (
+              <PickerBtn
+                // !  https://www.youtube.com/watch?v=terXi4NlcoI&t=4861s
+                //   ! index доступен через замыкание. мы передаём inline функцию, которая вызвится во время клика и вызовет нашу функцию (метод класса)
+                onClick={() => this.setActiveIdx(index)}
+                key={label}
+                className={this.makeOptionClassName(index)}
+                style={{
+                  backgroundColor: color,
+                  border:
+                    index === activeOptionIdx ? '3px solid black' : 'none',
+                }}
+              ></PickerBtn>
+            );
+          })}
         </div>
       </div>
     );

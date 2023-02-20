@@ -5,7 +5,7 @@ import { GlobalStyles } from './GlobalStyles';
 import { RecipeList } from './RecipeList';
 import recipes from './RecipeList/recipes.json';
 import { Wrapper } from './Wrapper/Wrapper';
-// import { DisplayOutput } from './DisplayUotput/DisplayOutput';
+// import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 import { Counter } from './Counter';
 
@@ -15,33 +15,50 @@ import { Counter } from './Counter';
 
 // * import data JSON
 import optionsColorPicker from './ColorPicker/ColorPickerData.json';
+import { Component } from 'react';
+import { TodoList } from './TodoList/TodoList';
 
-export default function App() {
-  return (
-    <Wrapper>
-      <GlobalStyles />
+export default class App extends Component {
+  state = {
+    todos: [
+      { id: 'id-1', text: 'Todo 1', completed: false },
+      { id: 'id-2', text: 'Todo 2', completed: false },
+      { id: 'id-3', text: 'Todo 3', completed: false },
+      { id: 'id-4', text: 'Todo 4', completed: false },
+    ],
+  };
 
-      <ColorPicker options={optionsColorPicker} />
+  render() {
+    const { todos } = this.state;
 
-      <Dropdown />
+    return (
+      <Wrapper>
+        <GlobalStyles />
 
-      <Counter initialValue={2} />
+        <TodoList todos={todos} />
 
-      {/* <DisplayOutput /> */}
+        <ColorPicker options={optionsColorPicker} />
 
-      <RecipeList items={recipes} />
+        <Dropdown />
 
-      {/* <Button /> */}
+        <Counter initialValue={2} />
 
-      {/* <UserProfileList items={users} /> */}
+        {/* <DisplayOutput /> */}
 
-      {/* <Section title="Section 1">
+        <RecipeList items={recipes} />
+
+        {/* <Button /> */}
+
+        {/* <UserProfileList items={users} /> */}
+
+        {/* <Section title="Section 1">
         <UserProfileList items={users} />
       </Section>
 
       <Section title="Section 2" />
 
       <Section /> */}
-    </Wrapper>
-  );
+      </Wrapper>
+    );
+  }
 }
