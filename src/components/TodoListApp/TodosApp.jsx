@@ -1,12 +1,11 @@
 import { Component } from 'react';
 import initialTodosList from './data/TodosList.json';
 import { TodoList } from './Components/TodoList';
+import { Form } from './Components/Form';
 
 export class TodoListApp extends Component {
   state = {
     todos: initialTodosList,
-    username: '',
-    number: '',
   };
 
   deleteTodo = todoId => {
@@ -15,19 +14,33 @@ export class TodoListApp extends Component {
     }));
   };
 
-  handleChange = event => {
-    const { name, value } = event.currentTarget;
-    this.setState({
-      [name]: value,
-    });
+  toggleCompleted = todoId => {
+    console.log(todoId);
+
+    this.setState(prevState => ({
+      todos: prevState.todos.map(todo => {
+        if (todo.id === todoId) {
+          console.log('Нашли тот todo который нужно!');
+
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+
+        return todo;
+      }),
+    }));
+  };
+
+  formSubmitHandler = data => {
+    console.log(data);
   };
 
   render() {
     const { todos } = this.state;
 
     const totalTodoCount = todos.length;
-
-    console.log(Date.now());
 
     // Очень полезная штука когда из массива нужно вытащить общее количство чero-то
     const completedTodoCount = todos.reduce(
@@ -37,30 +50,16 @@ export class TodoListApp extends Component {
 
     return (
       <>
-        <label>
-          Name
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-          />
-        </label>
-
-        <label>
-          Number
-          <input
-            type="text"
-            name="number"
-            value={this.state.number}
-            onChange={this.handleChange}
-          />
-        </label>
-
+        <Form onSubmit={this.formSubmitHandler} />
+        <hr />
         <p>All Todos amount: {totalTodoCount} </p>
         <p>Todos done amount: {completedTodoCount}</p>
 
-        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
+        <TodoList
+          todos={todos}
+          onDeleteTodo={this.deleteTodo}
+          onToggleCompleted={this.toggleCompleted}
+        />
       </>
     );
   }

@@ -2,6 +2,9 @@ import { PickerBtn } from './ColorPicker.styled';
 import { Component } from 'react';
 import './ColorPicker.css';
 
+// npm classnames
+import classNames from 'classnames';
+
 export class ColorPicker extends Component {
   state = {
     activeOptionIdx: 3,
@@ -12,13 +15,21 @@ export class ColorPicker extends Component {
   };
 
   makeOptionClassName = index => {
-    const optionClasses = ['ColorPicker__option'];
+    // variant # 2. на много проще поставить вычисляемый класс. Можно поставить инлайн
+    return classNames('ColorPicker__option', {
+      'ColorPicker__option--active': index === this.state.activeOptionIdx,
+    });
 
-    if (index === this.state.activeOptionIdx) {
-      optionClasses.push('ColorPicker__option--active');
-    }
+    // console.log(clsx);
 
-    return optionClasses.join(' ');
+    //Variant # 1
+    // const optionClasses = ['ColorPicker__option'];
+
+    // if (index === this.state.activeOptionIdx) {
+    //   optionClasses.push('ColorPicker__option--active');
+    // }
+
+    // return optionClasses.join(' ');
   };
 
   render() {
@@ -43,7 +54,10 @@ export class ColorPicker extends Component {
                 //   ! index доступен через замыкание. мы передаём inline функцию, которая вызвится во время клика и вызовет нашу функцию (метод класса)
                 onClick={() => this.setActiveIdx(index)}
                 key={label}
-                className={this.makeOptionClassName(index)}
+                className={classNames('ColorPicker__option', {
+                  'ColorPicker__option--active': index === activeOptionIdx,
+                })}
+                // className={this.makeOptionClassName(index)} // для примера
                 style={{
                   backgroundColor: color,
                   border:
