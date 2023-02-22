@@ -3,18 +3,27 @@ import PropTypes from 'prop-types';
 import { BsAlarm } from 'react-icons/bs';
 import { AiOutlinePieChart } from 'react-icons/ai';
 import { HiOutlineChartBar } from 'react-icons/hi';
+import {
+  Badge,
+  BadgeList,
+  Container,
+  Image,
+  InfoItem,
+  RecipeDifficulty,
+  RecipeInfo,
+} from './Recipe.styled';
 
 export const Recipe = ({ item: { name, image, time, servings, calories } }) => {
   return (
-    <div>
-      <img src={image} alt={name} width="240" />
+    <Container>
+      <Image src={image} alt={name} width="240" />
       <h2>{name}</h2>
 
-      <div>
-        <div>
+      <RecipeInfo>
+        <InfoItem>
           <BsAlarm size={25} />
           {time} min
-        </div>
+        </InfoItem>
         <div>
           <AiOutlinePieChart size={25} />
           {servings} servings
@@ -23,17 +32,17 @@ export const Recipe = ({ item: { name, image, time, servings, calories } }) => {
           <HiOutlineChartBar size={25} />
           {calories} calories
         </div>
-      </div>
+      </RecipeInfo>
 
-      <div>
+      <RecipeDifficulty>
         <h3>Difficulty</h3>
-        <div>
-          <span>Easy</span>
-          <span>Medium</span>
-          <span>Hard</span>
-        </div>
-      </div>
-    </div>
+        <BadgeList>
+          <Badge>Easy</Badge>
+          <Badge>Medium</Badge>
+          <Badge>Hard</Badge>
+        </BadgeList>
+      </RecipeDifficulty>
+    </Container>
   );
 };
 
