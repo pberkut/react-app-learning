@@ -3,9 +3,8 @@
 // import { ColorPicker } from './ColorPicker';
 // import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
-import { RecipeList } from './RecipeList';
-import recipes from './RecipeList/recipes.json';
 import { Wrapper } from './Wrapper/Wrapper';
+import { RecipleListApp } from './RecipeListApp';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
@@ -23,6 +22,8 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
+      <RecipleListApp />
+
       {/* <TodoListApp /> */}
 
       {/* <ColorPicker options={optionsColorPicker} /> */}
@@ -32,8 +33,6 @@ export default function App() {
       {/* <Counter initialValue={2} /> */}
 
       {/* <DisplayOutput /> */}
-
-      <RecipeList items={recipes} />
 
       {/* <Button /> */}
 

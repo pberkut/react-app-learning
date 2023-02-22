@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import { Recipe } from './Recipe';
-import { RecipleCardList } from './RecipleList.styled';
+import { Recipe } from '../Reciple/Recipe';
+import { RecipleCardList, ListItem } from './RecipleList.styled';
 
 export const RecipeList = ({ items }) => {
   return (
     <RecipleCardList>
       {items.map(item => (
-        <li key={item.id}>
+        <ListItem key={item.id}>
           <Recipe item={item} />
-        </li>
+        </ListItem>
       ))}
     </RecipleCardList>
   );
