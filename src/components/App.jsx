@@ -4,13 +4,13 @@
 // import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
 import { Wrapper } from './Wrapper/Wrapper';
-import { RecipleListApp } from './RecipeListApp';
+// import { RecipleListApp } from './RecipeListApp';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
-// import { TodoListApp } from './TodoListApp';
+import { TodoListApp } from './TodoListApp';
 
-// import Section from './components/Section';
+import { Section } from './Section';
 // import users from './data/users.json';j
 // import UserProfileList from './components/UserProfileList';
 
@@ -22,9 +22,11 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
-      <RecipleListApp />
+      {/* <RecipleListApp /> */}
 
-      {/* <TodoListApp /> */}
+      <Section>
+        <TodoListApp />
+      </Section>
 
       {/* <ColorPicker options={optionsColorPicker} /> */}
 
