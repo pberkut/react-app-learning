@@ -1,13 +1,21 @@
 import { Component } from 'react';
 import { RecipeList } from './components/RecipleList/';
-import recipes from './data/recipes.json';
+import initialRecipes from './data/recipes.json';
 
 export class RecipleListApp extends Component {
   state = {
-    recipes: recipes,
+    recipes: initialRecipes,
+  };
+
+  deleteRecipe = recipeId => {
+    this.setState(prevState => ({
+      recipes: prevState.recipes.filter(recipe => recipe.id !== recipeId),
+    }));
   };
 
   render() {
-    return <RecipeList items={this.state.recipes} />;
+    return (
+      <RecipeList items={this.state.recipes} onDelete={this.deleteRecipe} />
+    );
   }
 }
