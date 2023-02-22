@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
+import { StyledButton, Title } from './Modal.styled';
 
 const customStyles = {
   content: {
@@ -14,16 +15,16 @@ const customStyles = {
 
 ReactModal.setAppElement('#root');
 
-export const Modal = ({ isOpen, image, onClose }) => {
+export const Modal = ({ name, isOpen, image, onClose }) => {
   return (
     <div>
       <ReactModal
         isOpen={isOpen}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Modal for Recipe"
       >
-        <h2>Modal</h2>
-        <button onClick={onClose}>X</button>
+        <StyledButton onClick={onClose}>X</StyledButton>
+        <Title>{name}</Title>
         <img src={image} alt="" width="340" />
       </ReactModal>
     </div>
@@ -31,6 +32,8 @@ export const Modal = ({ isOpen, image, onClose }) => {
 };
 
 Modal.propTypes = {
+  name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
 };
