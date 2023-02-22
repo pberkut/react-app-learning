@@ -23,13 +23,13 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
-      <TodoListApp />
+      {/* <TodoListApp /> */}
 
-      <ColorPicker options={optionsColorPicker} />
+      {/* <ColorPicker options={optionsColorPicker} /> */}
 
-      <Dropdown />
+      {/* <Dropdown /> */}
 
-      <Counter initialValue={2} />
+      {/* <Counter initialValue={2} /> */}
 
       {/* <DisplayOutput /> */}
 

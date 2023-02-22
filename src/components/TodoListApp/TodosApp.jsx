@@ -18,7 +18,7 @@ export class TodoListApp extends Component {
 
     const totalTodoCount = todos.length;
 
-    // Очень полезная штука когда из массива нужно вытащить общее количство чего-т о
+    // Очень полезная штука когда из массива нужно вытащить общее количство cero-т о
     const completedTodoCount = todos.reduce(
       (acc, todo) => (todo.completed ? acc + 1 : acc),
       0
