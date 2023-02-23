@@ -8,6 +8,7 @@ import { Wrapper } from './Wrapper/Wrapper';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
+// import { FormApp } from './FormExampleApp';
 import { TodoListApp } from './TodoListApp';
 
 import { Section } from './Section';
@@ -21,6 +22,11 @@ export default function App() {
   return (
     <Wrapper>
       <GlobalStyles />
+
+      {/* Example my form */}
+      {/* <Section>
+        <FormApp />
+      </Section> */}
 
       {/* <RecipleListApp /> */}
 

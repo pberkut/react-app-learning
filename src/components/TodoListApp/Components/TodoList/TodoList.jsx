@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import '../../Styles/TodoList.scss';
+import './TodoList.scss';
 
 export const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
   <ul>
