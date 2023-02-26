@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form as FormikForm } from 'formik'; // * Вот так делается стилизация кастомных компонентов из библиотек
+import { Form as FormikForm, ErrorMessage as YupErrorMessage } from 'formik'; // * Вот так делается стилизация кастомных компонентов из библиотек
 
 export const Form = styled(FormikForm)`
   width: 400px;
@@ -8,6 +8,11 @@ export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
   gap: 12px;
+`;
+
+export const ErrorMessage = styled(YupErrorMessage)`
+  font-size: 13px;
+  color: red;
 `;
 
 export const FormField = styled.label`

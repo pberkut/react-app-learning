@@ -3,15 +3,16 @@
 // import { ColorPicker } from './ColorPicker';
 // import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
+import { PhonebookApp } from './PhonebookApp/PhonebookApp';
 import { Wrapper } from './Wrapper/Wrapper';
-import { RecipleListApp } from './RecipeListApp';
+// import { RecipleListApp } from './RecipeListApp';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
-// import { FormApp } from './FormExampleApp';
+// import { FormExampleApp } from './FormExampleApp';
 // import { TodoListApp } from './TodoListApp';
 
-import { Section } from './Section';
+// import { Section } from './Section';
 // import users from './data/users.json';j
 // import UserProfileList from './components/UserProfileList';
 
@@ -23,14 +24,16 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
+      <PhonebookApp />
+
       {/* Example my form */}
       {/* <Section>
-        <FormApp />
+        <FormExampleApp />
       </Section> */}
 
-      <Section>
+      {/* <Section>
         <RecipleListApp />
-      </Section>
+      </Section> */}
 
       {/* <Section>
         <TodoListApp />

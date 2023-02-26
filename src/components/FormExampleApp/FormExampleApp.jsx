@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Form } from './Form/';
 
-export class FormApp extends Component {
+export class FormExampleApp extends Component {
   state = {};
 
   formSubmitHandler = data => {
