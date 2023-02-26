@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { RecipeForm } from './components/RecipeForm/RecipeForm';
 import { RecipeList } from './components/RecipleList/';
 import initialRecipes from './data/recipes.json';
 
@@ -15,7 +16,10 @@ export class RecipleListApp extends Component {
 
   render() {
     return (
-      <RecipeList items={this.state.recipes} onDelete={this.deleteRecipe} />
+      <>
+        <RecipeForm />
+        <RecipeList items={this.state.recipes} onDelete={this.deleteRecipe} />
+      </>
     );
   }
 }

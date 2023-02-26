@@ -1,12 +1,15 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 
+const INITIAL_STATE = {
+  username: '',
+  number: '',
+  experience: 'junior',
+  agree: false,
+};
 export class Form extends Component {
   state = {
-    username: '',
-    number: '',
-    experience: 'junior',
-    agree: false,
+    ...INITIAL_STATE,
   };
 
   usernameInputId = nanoid(4);

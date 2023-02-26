@@ -4,12 +4,12 @@
 // import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
 import { Wrapper } from './Wrapper/Wrapper';
-// import { RecipleListApp } from './RecipeListApp';
+import { RecipleListApp } from './RecipeListApp';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
 // import { FormApp } from './FormExampleApp';
-import { TodoListApp } from './TodoListApp';
+// import { TodoListApp } from './TodoListApp';
 
 import { Section } from './Section';
 // import users from './data/users.json';j
@@ -28,11 +28,13 @@ export default function App() {
         <FormApp />
       </Section> */}
 
-      {/* <RecipleListApp /> */}
-
       <Section>
-        <TodoListApp />
+        <RecipleListApp />
       </Section>
+
+      {/* <Section>
+        <TodoListApp />
+      </Section> */}
 
       {/* <ColorPicker options={optionsColorPicker} /> */}
 
