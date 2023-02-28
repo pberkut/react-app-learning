@@ -134,7 +134,7 @@ export class TodoListApp extends Component {
           Open modal
         </button>
         {showModal && (
-          <Modal>
+          <Modal onClose={this.toggleModal}>
             <button type="button" onClick={this.toggleModal}>
               X
             </button>

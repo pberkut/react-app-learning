@@ -11,6 +11,7 @@ import { Wrapper } from './Wrapper/Wrapper';
 // import { Counter } from './Counter';
 // import { FormExampleApp } from './FormExampleApp';
 import { TodoListApp } from './TodoListApp';
+import { ClockApp } from './ClockApp/ClockApp';
 
 import { Section } from './Section';
 // import users from './data/users.json';j
@@ -24,6 +25,8 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
+      <ClockApp />
+
       {/* <PhonebookApp /> */}
 
       {/* Example my form */}
@@ -35,9 +38,9 @@ export default function App() {
         <RecipleListApp />
       </Section> */}
 
-      <Section>
+      {/* <Section>
         <TodoListApp />
-      </Section>
+      </Section> */}
 
       {/* <ColorPicker options={optionsColorPicker} /> */}
 
