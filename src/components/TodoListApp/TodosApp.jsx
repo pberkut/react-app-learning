@@ -4,11 +4,48 @@ import { TodoList } from './Components/TodoList';
 import { TodoEditor } from './Components/TodoEditor';
 import { Filter } from './Components/Filter';
 import { nanoid } from 'nanoid';
+import { Modal } from './Components/Modal';
 
 export class TodoListApp extends Component {
   state = {
     todos: initialTodosList,
     filter: '',
+    showModal: false,
+  };
+
+  componentDidMount() {
+    console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
+
+    if (parsedTodos) {
+      this.setState({
+        todos: parsedTodos,
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App componentDidUpdate');
+
+    if (this.setState.todos !== prevState.todos) {
+      console.log('Update Todos, save todos to localstorage');
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+    }
+
+    console.log('prevState: ', prevState);
+    console.log('currentState: ', this.state);
+  }
+
+  componentWillUnmount() {
+    console.log('App componentWillUnmount');
+  }
+
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
   };
 
   addTodo = text => {
@@ -82,7 +119,7 @@ export class TodoListApp extends Component {
   };
 
   render() {
-    const { todos, filter } = this.state;
+    const { todos, filter, showModal } = this.state;
 
     const totalTodoCount = todos.length;
 
@@ -93,6 +130,16 @@ export class TodoListApp extends Component {
 
     return (
       <>
+        <button type="button" onClick={this.toggleModal}>
+          Open modal
+        </button>
+        {showModal && (
+          <Modal>
+            <button type="button" onClick={this.toggleModal}>
+              X
+            </button>
+          </Modal>
+        )}
         <p>All Todos amount: {totalTodoCount} </p>
         <p>Todos done amount: {completedTodoCount}</p>
 
