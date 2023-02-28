@@ -4,6 +4,7 @@ import './styles.scss';
 export class Clock extends Component {
   state = {
     time: new Date().toLocaleTimeString(),
+    showModal: false,
   };
 
   intervalId = null;
@@ -18,6 +19,12 @@ export class Clock extends Component {
         }),
       1000
     );
+  }
+
+  // Обязательно после закрытия компоненты-класса необходимо снимать SetInterval и EventListener
+  componentWillUnmount() {
+    console.log('Clear setInterval');
+    clearInterval(this.intervalId);
   }
 
   render() {

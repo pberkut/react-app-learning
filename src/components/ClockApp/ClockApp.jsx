@@ -1,8 +1,30 @@
 import { Component } from 'react';
 import { Clock } from './components/Clock/Clock';
+import { Modal } from './components/Modal';
 
 export class ClockApp extends Component {
+  state = {
+    showModal: false,
+  };
+
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
+
   render() {
-    return <Clock />;
+    return (
+      <>
+        <button type="button" onClick={this.toggleModal}>
+          Open Clock
+        </button>
+        {this.state.showModal && (
+          <Modal onClose={this.toggleModal}>
+            <Clock />
+          </Modal>
+        )}
+      </>
+    );
   }
 }
