@@ -11,9 +11,10 @@ import { Wrapper } from './Wrapper/Wrapper';
 // import { Counter } from './Counter';
 // import { FormExampleApp } from './FormExampleApp';
 import { TodoListApp } from './TodoListApp';
-import { ClockApp } from './ClockApp/ClockApp';
+// import { ClockApp } from './ClockApp/ClockApp';
 
 import { Section } from './Section';
+import { TabsApp } from './TabsApp';
 // import users from './data/users.json';j
 // import UserProfileList from './components/UserProfileList';
 
@@ -25,7 +26,9 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
-      <ClockApp />
+      {/* <ClockApp /> */}
+
+      <TabsApp />
 
       {/* <PhonebookApp /> */}
 
@@ -38,9 +41,9 @@ export default function App() {
         <RecipleListApp />
       </Section> */}
 
-      {/* <Section>
+      <Section>
         <TodoListApp />
-      </Section> */}
+      </Section>
 
       {/* <ColorPicker options={optionsColorPicker} /> */}
 
