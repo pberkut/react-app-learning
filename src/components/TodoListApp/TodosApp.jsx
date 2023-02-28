@@ -1,14 +1,17 @@
 import { Component } from 'react';
-import initialTodosList from './data/TodosList.json';
+// import initialTodosList from './data/TodosList.json';
 import { TodoList } from './Components/TodoList';
 import { TodoEditor } from './Components/TodoEditor';
 import { Filter } from './Components/Filter';
 import { nanoid } from 'nanoid';
 import { Modal } from './Components/Modal';
+import { IconButton } from './Components/IconButton';
+import { ReactComponent as AddIcon } from './icons/add.svg';
 
 export class TodoListApp extends Component {
   state = {
-    todos: initialTodosList,
+    // todos: initialTodosList,
+    todos: [],
     filter: '',
     showModal: false,
   };
@@ -27,15 +30,23 @@ export class TodoListApp extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const nextTodos = this.state.todos;
+    const prevTodos = prevState.todos;
     console.log('App componentDidUpdate');
 
-    if (this.setState.todos !== prevState.todos) {
+    if (nextTodos !== prevTodos) {
       console.log('Update Todos, save todos to localstorage');
-      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+      localStorage.setItem('todos', JSON.stringify(nextTodos));
     }
 
     console.log('prevState: ', prevState);
     console.log('currentState: ', this.state);
+
+    // Закрытие модального окна AddTodo сравнение, что изменился массив
+    if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
+      console.log('Close modal');
+      this.toggleModal();
+    }
   }
 
   componentWillUnmount() {
@@ -62,6 +73,8 @@ export class TodoListApp extends Component {
     this.setState(({ todos }) => ({
       todos: [todo, ...todos],
     }));
+
+    // this.toggleModal();
   };
 
   deleteTodo = todoId => {
@@ -130,22 +143,29 @@ export class TodoListApp extends Component {
 
     return (
       <>
-        <button type="button" onClick={this.toggleModal}>
+        <div>
+          <p>All Todos amount: {totalTodoCount} </p>
+          <p>Todos done amount: {completedTodoCount}</p>
+        </div>
+        <hr />
+
+        <IconButton onClick={this.toggleModal} aria-label="Add Todo">
+          <AddIcon width="40" height="40" fill="white" />
+        </IconButton>
+
+        {/* <button type="button" onClick={this.toggleModal}>
           Open modal
-        </button>
+        </button> */}
+
         {showModal && (
           <Modal onClose={this.toggleModal}>
             <button type="button" onClick={this.toggleModal}>
               X
             </button>
+
+            <TodoEditor onSubmit={this.addTodo} />
           </Modal>
         )}
-        <p>All Todos amount: {totalTodoCount} </p>
-        <p>Todos done amount: {completedTodoCount}</p>
-
-        <hr />
-
-        <TodoEditor onSubmit={this.addTodo} />
 
         <hr />
 

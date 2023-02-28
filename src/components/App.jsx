@@ -14,7 +14,7 @@ import { TodoListApp } from './TodoListApp';
 // import { ClockApp } from './ClockApp/ClockApp';
 
 import { Section } from './Section';
-import { TabsApp } from './TabsApp';
+// import { TabsApp } from './TabsApp';
 // import users from './data/users.json';j
 // import UserProfileList from './components/UserProfileList';
 
@@ -28,7 +28,7 @@ export default function App() {
 
       {/* <ClockApp /> */}
 
-      <TabsApp />
+      {/* <TabsApp /> */}
 
       {/* <PhonebookApp /> */}
 
