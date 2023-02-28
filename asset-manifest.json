@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/react-app-learning/static/css/main.9ea9b4ed.css",
-    "main.js": "/react-app-learning/static/js/main.9cd84eff.js",
+    "main.css": "/react-app-learning/static/css/main.f6f47366.css",
+    "main.js": "/react-app-learning/static/js/main.9c8ccc33.js",
     "static/js/787.bc30ae28.chunk.js": "/react-app-learning/static/js/787.bc30ae28.chunk.js",
     "index.html": "/react-app-learning/index.html",
-    "main.9ea9b4ed.css.map": "/react-app-learning/static/css/main.9ea9b4ed.css.map",
-    "main.9cd84eff.js.map": "/react-app-learning/static/js/main.9cd84eff.js.map",
+    "static/media/delete.svg": "/react-app-learning/static/media/delete.9f1ac2a7499a3f9e5b1928e17e1c5e74.svg",
+    "static/media/add.svg": "/react-app-learning/static/media/add.be920f9bd64d11f209bdd8555dc812b2.svg",
+    "main.f6f47366.css.map": "/react-app-learning/static/css/main.f6f47366.css.map",
+    "main.9c8ccc33.js.map": "/react-app-learning/static/js/main.9c8ccc33.js.map",
     "787.bc30ae28.chunk.js.map": "/react-app-learning/static/js/787.bc30ae28.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ea9b4ed.css",
-    "static/js/main.9cd84eff.js"
+    "static/css/main.f6f47366.css",
+    "static/js/main.9c8ccc33.js"
   ]
 }
