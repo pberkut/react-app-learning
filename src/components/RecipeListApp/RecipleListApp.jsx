@@ -5,8 +5,21 @@ import initialRecipes from './data/recipes.json';
 
 export class RecipleListApp extends Component {
   state = {
-    recipes: initialRecipes,
+    recipes: [],
   };
+
+  componentDidMount() {
+    const savedRecipes = localStorage.getItem('recipes');
+    // console.log('Saved recipes: ', savedRecipes);
+    if (savedRecipes !== null) {
+      const parsedRecipes = JSON.parse(savedRecipes);
+      // console.log(parsedRecipes);
+      this.setState({ recipes: parsedRecipes });
+      return;
+    }
+
+    this.setState({ recipes: initialRecipes });
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.recipes !== this.state.recipes) {
