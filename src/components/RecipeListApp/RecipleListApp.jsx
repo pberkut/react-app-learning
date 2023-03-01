@@ -8,6 +8,12 @@ export class RecipleListApp extends Component {
     recipes: initialRecipes,
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.recipes !== this.state.recipes) {
+      localStorage.setItem('recipes', JSON.stringify(this.state.recipes));
+    }
+  }
+
   addRecipe = newRecipe => {
     this.setState(prevState => {
       return {

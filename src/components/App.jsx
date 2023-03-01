@@ -5,12 +5,12 @@
 import { GlobalStyles } from './GlobalStyles';
 // import { PhonebookApp } from './PhonebookApp/PhonebookApp';
 import { Wrapper } from './Wrapper/Wrapper';
-// import { RecipleListApp } from './RecipeListApp';
+import { RecipleListApp } from './RecipeListApp';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
 // import { FormExampleApp } from './FormExampleApp';
-import { TodoListApp } from './TodoListApp';
+// import { TodoListApp } from './TodoListApp';
 // import { ClockApp } from './ClockApp/ClockApp';
 
 import { Section } from './Section';
@@ -37,13 +37,13 @@ export default function App() {
         <FormExampleApp />
       </Section> */}
 
-      {/* <Section>
-        <RecipleListApp />
-      </Section> */}
-
       <Section>
-        <TodoListApp />
+        <RecipleListApp />
       </Section>
+
+      {/* <Section>
+        <TodoListApp />
+      </Section> */}
 
       {/* <ColorPicker options={optionsColorPicker} /> */}
 
