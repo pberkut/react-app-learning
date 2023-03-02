@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import { PokemonForm } from './components/PokemonForm';
 import 'react-toastify/dist/ReactToastify.css';
 import { PokemonInfo } from './components/PokemonInfo';
+import './styles.css';
 
 export class PokemonApp extends Component {
   state = {

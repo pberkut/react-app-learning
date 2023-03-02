@@ -1,0 +1,1 @@
+export { PokemonPendingView } from './PokemonPendingView';

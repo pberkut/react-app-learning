@@ -1,0 +1,1 @@
+export { PokemonDataView } from './PokemonDataView';

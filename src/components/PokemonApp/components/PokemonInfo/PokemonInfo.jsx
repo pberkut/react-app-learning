@@ -1,4 +1,7 @@
 import { Component } from 'react';
+import { PokemonDataView } from '../PokemonDataView/PokemonDataView';
+import { PokemonErrorView } from '../PokemonErrorView';
+import { PokemonPendingView } from '../PokemonPendingView';
 
 /*
 
@@ -96,24 +99,28 @@ export class PokemonInfo extends Component {
     }
 
     if (status === 'pending') {
-      return <div>Loading...</div>;
+      return <PokemonPendingView />;
+      //   return <div>Loading...</div>;
     }
 
     if (status === 'rejected') {
-      return <p>Status error: {error.message}</p>;
+      return <PokemonErrorView message={error.message} />;
+      // <p>Status error: {error.message}</p>;
     }
 
     if (status === 'resolved') {
-      return (
-        <div>
-          <p>{pokemon.name}</p>
-          <img
-            src={pokemon.sprites.other['official-artwork'].front_default}
-            alt={pokemon.name}
-            width="240"
-          />
-        </div>
-      );
+      return <PokemonDataView pokemon={pokemon} />;
+
+      //   return (
+      //     <div>
+      //       <p>{pokemon.name}</p>
+      //       <img
+      //         src={pokemon.sprites.other['official-artwork'].front_default}
+      //         alt={pokemon.name}
+      //         width="240"
+      //       />
+      //     </div>
+      //   );
     }
 
     // Вариант № 1
