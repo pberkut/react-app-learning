@@ -3,6 +3,7 @@
 // import { ColorPicker } from './ColorPicker';
 // import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
+import { ReaderApp } from './ReaderApp/ReaderApp';
 // import { PhonebookApp } from './PhonebookApp/PhonebookApp';
 import { Wrapper } from './Wrapper/Wrapper';
 // import { RecipleListApp } from './RecipeListApp';
@@ -14,7 +15,7 @@ import { Wrapper } from './Wrapper/Wrapper';
 // import { ClockApp } from './ClockApp/ClockApp';
 
 // import { Section } from './Section';
-import { PlayerApp } from './PlayerApp/PlayerApp';
+// import { PlayerApp } from './PlayerApp/PlayerApp';
 // import { TabsApp } from './TabsApp';
 // import users from './data/users.json';j
 // import UserProfileList from './components/UserProfileList';
@@ -27,7 +28,9 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
-      <PlayerApp />
+      <ReaderApp />
+
+      {/* <PlayerApp /> */}
 
       {/* <ClockApp /> */}
 
