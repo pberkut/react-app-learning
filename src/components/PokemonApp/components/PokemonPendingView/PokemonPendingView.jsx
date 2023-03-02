@@ -11,6 +11,9 @@ const styles = {
   },
 };
 
+// Компонент скелетон
+// react skeleton
+
 export const PokemonPendingView = ({ pokemonName }) => {
   const pokemon = {
     name: pokemonName,

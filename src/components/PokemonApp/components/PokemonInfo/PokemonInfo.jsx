@@ -2,16 +2,15 @@ import { Component } from 'react';
 import { PokemonDataView } from '../PokemonDataView/PokemonDataView';
 import { PokemonErrorView } from '../PokemonErrorView';
 import { PokemonPendingView } from '../PokemonPendingView';
+import pokemonAPI from '../../services/pokemon-api';
 
 /*
-
 Паттерн state machine pattern - Стейт Машина
 У нас будет 4 состояния:
  'idle' - простой, стоит на месте
  'pending' - ожидается выполнение
  'resolved' - Выполнилось с результатом, это хорошо
  'rejected' - отклонено, результата нет
-
 */
 export class PokemonInfo extends Component {
   // Вариант № 1
@@ -65,16 +64,9 @@ export class PokemonInfo extends Component {
       //   console.log('nextName ', nextName);
 
       this.setState({ status: 'pending' });
-      fetch(`https://pokeapi.co/api/v2/pokemon/${nextName}`)
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
 
-          return Promise.reject(
-            new Error(`No Pokemon witt this name ${nextName} `)
-          );
-        })
+      pokemonAPI
+        .fetchPokemon(nextName)
         .then(pokemon => this.setState({ pokemon, status: 'resolved' }))
         .catch(error => this.setState({ error, status: 'rejected' }));
     }
@@ -93,13 +85,15 @@ export class PokemonInfo extends Component {
     // const { pokemonName } = this.props;
 
     const { pokemon, error, status } = this.state;
+    const { pokemonName } = this.props;
 
     if (status === 'idle') {
       return <div>Enter name pokemon</div>;
     }
 
     if (status === 'pending') {
-      return <PokemonPendingView />;
+      // Компонент со скелетоном
+      return <PokemonPendingView pokemonName={pokemonName} />;
       //   return <div>Loading...</div>;
     }
 
