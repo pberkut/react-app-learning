@@ -5,7 +5,7 @@
 import { GlobalStyles } from './GlobalStyles';
 // import { PhonebookApp } from './PhonebookApp/PhonebookApp';
 import { Wrapper } from './Wrapper/Wrapper';
-import { RecipleListApp } from './RecipeListApp';
+// import { RecipleListApp } from './RecipeListApp';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
@@ -13,7 +13,8 @@ import { RecipleListApp } from './RecipeListApp';
 // import { TodoListApp } from './TodoListApp';
 // import { ClockApp } from './ClockApp/ClockApp';
 
-import { Section } from './Section';
+// import { Section } from './Section';
+import { PlayerApp } from './PlayerApp/PlayerApp';
 // import { TabsApp } from './TabsApp';
 // import users from './data/users.json';j
 // import UserProfileList from './components/UserProfileList';
@@ -26,6 +27,8 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
+      <PlayerApp />
+
       {/* <ClockApp /> */}
 
       {/* <TabsApp /> */}
@@ -37,9 +40,9 @@ export default function App() {
         <FormExampleApp />
       </Section> */}
 
-      <Section>
+      {/* <Section>
         <RecipleListApp />
-      </Section>
+      </Section> */}
 
       {/* <Section>
         <TodoListApp />
