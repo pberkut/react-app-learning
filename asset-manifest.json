@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/react-app-learning/static/css/main.30aa07f3.css",
-    "main.js": "/react-app-learning/static/js/main.0c284d3c.js",
+    "main.css": "/react-app-learning/static/css/main.4ae761f6.css",
+    "main.js": "/react-app-learning/static/js/main.fa413388.js",
     "static/js/787.bc30ae28.chunk.js": "/react-app-learning/static/js/787.bc30ae28.chunk.js",
+    "static/media/error.jpg": "/react-app-learning/static/media/error.7d86105a62bf3b28ec78.jpg",
     "index.html": "/react-app-learning/index.html",
-    "main.30aa07f3.css.map": "/react-app-learning/static/css/main.30aa07f3.css.map",
-    "main.0c284d3c.js.map": "/react-app-learning/static/js/main.0c284d3c.js.map",
+    "main.4ae761f6.css.map": "/react-app-learning/static/css/main.4ae761f6.css.map",
+    "main.fa413388.js.map": "/react-app-learning/static/js/main.fa413388.js.map",
     "787.bc30ae28.chunk.js.map": "/react-app-learning/static/js/787.bc30ae28.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30aa07f3.css",
-    "static/js/main.0c284d3c.js"
+    "static/css/main.4ae761f6.css",
+    "static/js/main.fa413388.js"
   ]
 }
