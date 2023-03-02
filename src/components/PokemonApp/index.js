@@ -1,0 +1,1 @@
+export { PokemonApp } from './PokemonApp';
