@@ -1,0 +1,1 @@
+export { MaterialApp } from './MaterialApp';

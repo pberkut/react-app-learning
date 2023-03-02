@@ -13,7 +13,8 @@ import { Wrapper } from './Wrapper/Wrapper';
 // import { FormExampleApp } from './FormExampleApp';
 // import { TodoListApp } from './TodoListApp';
 // import { ClockApp } from './ClockApp/ClockApp';
-import { PokemonApp } from './PokemonApp';
+// import { PokemonApp } from './PokemonApp';
+import { MaterialApp } from './MatreialApp';
 
 // import { Section } from './Section';
 // import { PlayerApp } from './PlayerApp/PlayerApp';
@@ -29,7 +30,9 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
-      <PokemonApp />
+      <MaterialApp />
+
+      {/* <PokemonApp /> */}
 
       {/* <ReaderApp /> */}
 
