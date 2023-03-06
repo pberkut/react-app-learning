@@ -3,6 +3,7 @@
 // import { ColorPicker } from './ColorPicker';
 // import { Dropdown } from './Dropdown';
 import { GlobalStyles } from './GlobalStyles';
+import { SignUpForm } from './SignUpForm';
 // import { ReaderApp } from './ReaderApp/ReaderApp';
 // import { PhonebookApp } from './PhonebookApp/PhonebookApp';
 import { Wrapper } from './Wrapper/Wrapper';
@@ -14,7 +15,7 @@ import { Wrapper } from './Wrapper/Wrapper';
 // import { TodoListApp } from './TodoListApp';
 // import { ClockApp } from './ClockApp/ClockApp';
 // import { PokemonApp } from './PokemonApp';
-import { MaterialApp } from './MatreialApp';
+// import { MaterialApp } from './MaterialApp';
 
 // import { Section } from './Section';
 // import { PlayerApp } from './PlayerApp/PlayerApp';
@@ -30,7 +31,9 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
-      <MaterialApp />
+      <SignUpForm />
+
+      {/* <MaterialApp /> */}
 
       {/* <PokemonApp /> */}
 
