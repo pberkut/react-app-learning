@@ -1,1 +1,1 @@
-export {} from './ClockApp';
+export { ClockApp } from './ClockApp';
