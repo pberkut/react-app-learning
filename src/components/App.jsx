@@ -13,8 +13,9 @@ import { Wrapper } from './Wrapper';
 // import { Counter } from './Counter';
 // import { FormExampleApp } from './FormExampleApp';
 // import { TodoListApp } from './TodoListApp';
-import { ClockApp } from './ClockApp';
-// import { PokemonApp } from './PokemonApp';
+// import { ClockApp } from './ClockApp';
+// import { SkipEffectOnFirstRender } from './SkipEffectOnFirstRender';
+import { PokemonApp } from './PokemonApp';
 // import { MaterialApp } from './MaterialApp';
 
 // import { Section } from './Section';
@@ -31,17 +32,19 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
+      {/* <SkipEffectOnFirstRender /> */}
+
       {/* <SignUpForm /> */}
 
       {/* <MaterialApp /> */}
 
-      {/* <PokemonApp /> */}
+      <PokemonApp />
 
       {/* <ReaderApp /> */}
 
       {/* <PlayerApp /> */}
 
-      <ClockApp />
+      {/* <ClockApp /> */}
 
       {/* <TabsApp /> */}
 

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Clock } from './components/Clock';
-// import { Modal } from './components/Modal';
+import { Modal } from './components/Modal';
 
 export class ClockApp extends Component {
   state = {
@@ -16,18 +16,20 @@ export class ClockApp extends Component {
   render() {
     return (
       <>
-        <Clock />
-
         {/* <button type="button" onClick={this.handleStopClock}></button> */}
         <hr />
         <button type="button" onClick={this.toggleModal}>
           Open Clock
         </button>
-        {/* {this.state.showModal && (
+        {this.state.showModal && (
           <>
-            <Modal onClose={this.toggleModal}></Modal>
+            <Modal onClose={this.toggleModal}>
+              <Clock />
+              <Clock />
+              <Clock />
+            </Modal>
           </>
-        )} */}
+        )}
       </>
     );
   }

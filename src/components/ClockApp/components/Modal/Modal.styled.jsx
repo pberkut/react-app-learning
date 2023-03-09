@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const BackdropModal = styled.div`
   position: fixed;
+  overflow: auto;
   top: 0;
   left: 0;
   width: 100vw;

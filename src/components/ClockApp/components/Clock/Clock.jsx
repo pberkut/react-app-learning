@@ -15,6 +15,7 @@ export const Clock = () => {
     }, 1000);
 
     return () => {
+      console.log('Это функция очистки перед следующим вызовом useEffect');
       handleStopClock();
     };
   }, []);
