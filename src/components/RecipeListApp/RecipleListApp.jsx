@@ -1,52 +1,37 @@
-import { Component } from 'react';
+import { useEffect, useState } from 'react';
 import { RecipeForm } from './components/RecipeForm/RecipeForm';
 import { RecipeList } from './components/RecipleList/';
 import initialRecipes from './data/recipes.json';
 
-export class RecipleListApp extends Component {
-  state = {
-    recipes: [],
+// Только для синхронного кода
+const getInitialRecipes = () => {
+  const savedRecipes = localStorage.getItem('recipes');
+  if (savedRecipes !== null) {
+    const parsedRecipes = JSON.parse(savedRecipes);
+    return parsedRecipes;
+  }
+  return initialRecipes;
+};
+
+export const RecipleListApp = () => {
+  const [recipes, setRecipes] = useState(getInitialRecipes);
+
+  useEffect(() => {
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+  }, [recipes]);
+
+  const addRecipe = newRecipe => {
+    setRecipes(prevState => [newRecipe, ...prevState]);
   };
 
-  componentDidMount() {
-    const savedRecipes = localStorage.getItem('recipes');
-    // console.log('Saved recipes: ', savedRecipes);
-    if (savedRecipes !== null) {
-      const parsedRecipes = JSON.parse(savedRecipes);
-      // console.log(parsedRecipes);
-      this.setState({ recipes: parsedRecipes });
-      return;
-    }
-
-    this.setState({ recipes: initialRecipes });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.recipes !== this.state.recipes) {
-      localStorage.setItem('recipes', JSON.stringify(this.state.recipes));
-    }
-  }
-
-  addRecipe = newRecipe => {
-    this.setState(prevState => {
-      return {
-        recipes: [newRecipe, ...prevState.recipes],
-      };
-    });
+  const deleteRecipe = recipeId => {
+    setRecipes(prevState => prevState.filter(recipe => recipe.id !== recipeId));
   };
 
-  deleteRecipe = recipeId => {
-    this.setState(prevState => ({
-      recipes: prevState.recipes.filter(recipe => recipe.id !== recipeId),
-    }));
-  };
-
-  render() {
-    return (
-      <>
-        <RecipeForm onSave={this.addRecipe} />
-        <RecipeList items={this.state.recipes} onDelete={this.deleteRecipe} />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <RecipeForm onSave={addRecipe} />
+      <RecipeList items={recipes} onDelete={deleteRecipe} />
+    </>
+  );
+};
