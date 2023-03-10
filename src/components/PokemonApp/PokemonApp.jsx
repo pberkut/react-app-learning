@@ -10,7 +10,7 @@ export const PokemonApp = () => {
 
   return (
     <div style={{ maxWidth: 1170, margin: '0 auto', padding: 20 }}>
-      <PokemonForm onSubmitNameProps={setPokemonName} />
+      <PokemonForm onSubmit={setPokemonName} />
       <PokemonInfo pokemonName={pokemonName} />
       <ToastContainer autoClose={3000} />
     </div>

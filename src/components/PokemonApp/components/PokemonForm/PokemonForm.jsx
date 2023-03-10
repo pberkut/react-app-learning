@@ -1,44 +1,40 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
 
 const styles = { form: { marginBottom: 20 } };
 
-export class PokemonForm extends Component {
-  state = {
-    pokemonName: '',
+export const PokemonForm = ({ onSubmit }) => {
+  const [pokemonName, setPokemonName] = useState('');
+
+  const handleNameChange = e => {
+    setPokemonName(e.currentTarget.value.toLowerCase());
   };
 
-  handleNameChange = e => {
-    this.setState({ pokemonName: e.currentTarget.value.toLowerCase() });
-  };
-
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
 
-    if (this.state.pokemonName.trim() === '') {
+    if (pokemonName.trim() === '') {
       toast.error('Enter name Pokemon');
       return;
     }
-    this.props.onSubmitNameProps(this.state.pokemonName);
-    this.setState({ pokemonName: '' });
+    onSubmit(pokemonName);
+    setPokemonName('');
   };
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit} style={styles.form}>
-        <input
-          type="text"
-          name="pokemonName"
-          value={this.state.pokemonName}
-          onChange={this.handleNameChange}
-          autoFocus
-        />
-        <button type="submit">
-          <ImSearch style={{ marginRight: 8 }} />
-          Search
-        </button>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit} style={styles.form}>
+      <input
+        type="text"
+        name="pokemonName"
+        value={pokemonName}
+        onChange={handleNameChange}
+        autoFocus
+      />
+      <button type="submit">
+        <ImSearch style={{ marginRight: 8 }} />
+        Search
+      </button>
+    </form>
+  );
+};
