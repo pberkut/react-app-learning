@@ -16,7 +16,7 @@ export class Form extends Component {
   numberInputId = nanoid(4);
 
   handleChange = event => {
-    const { name, value } = event.currentTarget;
+    const { name, value } = event.target;
     this.setState({
       [name]: value,
     });
@@ -31,7 +31,7 @@ export class Form extends Component {
   };
 
   handleAgreeChange = e => {
-    this.setState({ agree: e.currentTarget.checked });
+    this.setState({ agree: e.target.checked });
   };
 
   reset = () => {

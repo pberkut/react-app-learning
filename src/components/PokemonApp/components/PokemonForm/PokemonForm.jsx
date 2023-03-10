@@ -8,7 +8,7 @@ export const PokemonForm = ({ onSubmit }) => {
   const [pokemonName, setPokemonName] = useState('');
 
   const handleNameChange = e => {
-    setPokemonName(e.currentTarget.value.toLowerCase());
+    setPokemonName(e.target.value.toLowerCase());
   };
 
   const handleSubmit = e => {

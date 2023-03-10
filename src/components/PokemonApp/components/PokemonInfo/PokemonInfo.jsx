@@ -67,7 +67,11 @@ export const PokemonInfo = ({ pokemonName }) => {
   //   }
 
   useEffect(() => {
+    console.log('Рендер');
     if (!pokemonName) {
+      console.log(
+        'Первый рендер, pokemonName это пустая строка, не делаем fetch'
+      );
       return;
     }
 

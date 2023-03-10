@@ -1,0 +1,1 @@
+export { UseMemoFriendsApp } from './UseMemoFriendsApp';

@@ -7,7 +7,7 @@ import { GlobalStyles } from './GlobalStyles';
 // import { ReaderApp } from './ReaderApp/ReaderApp';
 // import { PhonebookApp } from './PhonebookApp/PhonebookApp';
 import { Wrapper } from './Wrapper';
-// import { RecipleListApp } from './RecipeListApp';
+import { RecipleListApp } from './RecipeListApp';
 // import { DisplayOutput } from './DisplayOutput/DisplayOutput';
 // import { Button } from './Button/Button';
 // import { Counter } from './Counter';
@@ -15,10 +15,12 @@ import { Wrapper } from './Wrapper';
 // import { TodoListApp } from './TodoListApp';
 // import { ClockApp } from './ClockApp';
 // import { SkipEffectOnFirstRender } from './SkipEffectOnFirstRender';
-import { PokemonApp } from './PokemonApp';
+// import { PokemonApp } from './PokemonApp';
 // import { MaterialApp } from './MaterialApp';
+// import { UseReducerCounterApp } from './UseReducerCounterApp';
+// import { UseMemoFriendsApp } from './UseMemoFriendsApp';
 
-// import { Section } from './Section';
+import { Section } from './Section';
 // import { PlayerApp } from './PlayerApp/PlayerApp';
 // import { TabsApp } from './TabsApp';
 // import users from './data/users.json';j
@@ -32,13 +34,17 @@ export default function App() {
     <Wrapper>
       <GlobalStyles />
 
+      {/* <UseMemoFriendsApp /> */}
+
+      {/* <UseReducerCounterApp /> */}
+
       {/* <SkipEffectOnFirstRender /> */}
 
       {/* <SignUpForm /> */}
 
       {/* <MaterialApp /> */}
 
-      <PokemonApp />
+      {/* <PokemonApp /> */}
 
       {/* <ReaderApp /> */}
 
@@ -55,9 +61,9 @@ export default function App() {
         <FormExampleApp />
       </Section> */}
 
-      {/* <Section>
+      <Section>
         <RecipleListApp />
-      </Section> */}
+      </Section>
 
       {/* <Section>
         <TodoListApp />

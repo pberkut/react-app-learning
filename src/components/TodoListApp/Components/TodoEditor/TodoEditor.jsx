@@ -7,7 +7,7 @@ export class TodoEditor extends Component {
   };
 
   handleChange = e => {
-    this.setState({ message: e.currentTarget.value });
+    this.setState({ message: e.target.value });
   };
 
   handleSubmit = e => {
