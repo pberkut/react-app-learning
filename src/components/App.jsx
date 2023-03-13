@@ -19,6 +19,8 @@ import { RecipleListApp } from './RecipeListApp';
 // import { MaterialApp } from './MaterialApp';
 // import { UseReducerCounterApp } from './UseReducerCounterApp';
 // import { UseMemoFriendsApp } from './UseMemoFriendsApp';
+import { HTTPReqAbortApp } from './HTTPReqAbortApp';
+import { HTTPReqAbortOnEventApp } from './HTTPReqAbortOnEventApp';
 
 import { Section } from './Section';
 // import { PlayerApp } from './PlayerApp/PlayerApp';
@@ -33,6 +35,9 @@ export default function App() {
   return (
     <Wrapper>
       <GlobalStyles />
+
+      <HTTPReqAbortApp />
+      <HTTPReqAbortOnEventApp />
 
       {/* <UseMemoFriendsApp /> */}
 
@@ -61,9 +66,9 @@ export default function App() {
         <FormExampleApp />
       </Section> */}
 
-      <Section>
+      {/* <Section>
         <RecipleListApp />
-      </Section>
+      </Section> */}
 
       {/* <Section>
         <TodoListApp />
