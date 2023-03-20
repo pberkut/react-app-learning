@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
 body {
   font-family: sans-serif;
   line-height: 1.5;
+  background-color: red;
   }
 h1,
 h2,
