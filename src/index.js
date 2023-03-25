@@ -8,9 +8,11 @@ import reportWebVitals from './reportWebVitals';
 // import App from './components/App';
 
 // TodoReduxApp
-import App from './apps/TodoReduxApp';
 import { Provider } from 'react-redux';
-import { store } from './apps/TodoReduxApp/redux/store';
+// import App from './apps/TodoReduxApp';
+// import { store } from './apps/TodoReduxApp/redux/store';
+import App from './apps/TodoReduxToolkitApp';
+import { store } from './apps/TodoReduxToolkitApp/redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
