@@ -1,10 +1,15 @@
+import { useDispatch } from 'react-redux';
+import { addTask } from '../../redux/actions';
 import Button from '../Button';
 import css from './TaskForm.module.css';
 
 const TaskForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
+    dispatch(addTask(form.elements.text.value));
     form.reset();
   };
 
@@ -17,7 +22,7 @@ const TaskForm = () => {
         placeholder="Enter task text..."
       />
 
-      <Button>Add task</Button>
+      <Button type="submit">Add task</Button>
     </form>
   );
 };
