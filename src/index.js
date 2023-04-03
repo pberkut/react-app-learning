@@ -11,8 +11,14 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 // import App from './apps/TodoReduxApp';
 // import { store } from './apps/TodoReduxApp/redux/store';
-import App from './apps/TodoReduxToolkitApp';
-import { store } from './apps/TodoReduxToolkitApp/redux/store';
+
+// * App with redux toolkit
+// import App from './apps/TodoReduxToolkitApp';
+// import { store } from './apps/TodoReduxToolkitApp/redux/store';
+
+// * App with Rest API backend
+import App from './apps/TodoRestApiApp';
+import { store } from './apps/TodoRestApiApp/redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
