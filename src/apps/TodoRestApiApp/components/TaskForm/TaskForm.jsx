@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addTask } from '../../redux/tasksSlice.js';
+import { addTask } from '../../redux/operations';
 import Button from '../Button';
 import css from './TaskForm.module.css';
 

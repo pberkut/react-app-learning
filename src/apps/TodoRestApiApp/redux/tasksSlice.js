@@ -1,31 +1,58 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchTasks, addTask, deleteTask, toggleCompleted } from './operations';
 
-const tasksInitialState = {
-  items: [],
-  isLoading: false,
-  error: null,
+const handlePending = state => {
+  state.isLoading = true;
+};
+
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
 };
 
 const tasksSlice = createSlice({
   name: 'tasks',
-  initialState: tasksInitialState,
-  reducers: {
-    fetchingInProgress(state) {
-      state.isLoading = true;
-    },
-    fetchingSuccess(state, action) {
+  initialState: {
+    items: [],
+    isLoading: false,
+    error: null,
+  },
+  extraReducers: {
+    [fetchTasks.pending]: handlePending,
+    [fetchTasks.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
     },
-    fetchingError(state, action) {
+    [fetchTasks.rejected]: handleRejected,
+    [addTask.pending]: handlePending,
+    [addTask.fulfilled](state, action) {
       state.isLoading = false;
-      state.error = action.payload;
+      state.error = null;
+      state.items.push(action.payload);
     },
+    [addTask.rejected]: handleRejected,
+    [deleteTask.pending]: handlePending,
+    [deleteTask.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(
+        task => task.id === action.payload.id
+      );
+      state.items.splice(index, 1);
+    },
+    [deleteTask.rejected]: handleRejected,
+    [toggleCompleted.pending]: handlePending,
+    [toggleCompleted.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(
+        task => task.id === action.payload.id
+      );
+      state.items.splice(index, 1, action.payload);
+    },
+    [toggleCompleted.rejected]: handleRejected,
   },
 });
 
-// Экспортируем генераторы экшенов и редюсер
-export const { fetchingInProgress, fetchingSuccess, fetchingError } =
-  tasksSlice.actions;
 export const tasksReducer = tasksSlice.reducer;
