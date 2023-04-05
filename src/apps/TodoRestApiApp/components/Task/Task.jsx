@@ -8,7 +8,7 @@ const Task = ({ task }) => {
 
   const handleDelete = () => dispatch(deleteTask(task.id));
 
-  const handleToggle = () => dispatch(toggleCompleted(tasks));
+  const handleToggle = () => dispatch(toggleCompleted(task));
 
   return (
     <div className={css.wrapper}>
